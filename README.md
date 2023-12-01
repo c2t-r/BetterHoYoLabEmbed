@@ -1,11 +1,8 @@
 # BetterHoYoLabEmbed
 a discord bot to improve hoyolab embed
 
-## Usage
-1. clone this repo
-2. `pip install -r requirements.txt`
-3. save your bot token as a file named `TOKEN` (with utf-8 encoding)
-4. `py main py`
+## invite
+https://discord.com/api/oauth2/authorize?client_id=1123581479092498512&permissions=687195085888&scope=bot
 
 ## feature
 original embed sucks  
@@ -13,3 +10,9 @@ original embed sucks
 
 with this bot (AMAZING)  
 ![image](https://github.com/c2t-r/BetterHoYoLabEmbed/assets/80561604/b42e8be5-ff54-4676-944d-dcb7ce5bd6df)
+
+## Usage
+1. clone this repo
+2. `pip install -r requirements.txt`
+3. save your bot token as a file named `TOKEN` (with utf-8 encoding)
+4. `py main py`
