@@ -15,4 +15,4 @@ with this bot (AMAZING)
 1. clone this repo
 2. `pip install -r requirements.txt`
 3. save your bot token as a file named `TOKEN` (with utf-8 encoding)
-4. `py main py`
+4. `py main.py`
