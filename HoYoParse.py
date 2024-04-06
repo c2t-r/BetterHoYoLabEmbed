@@ -1,11 +1,11 @@
 import requests
 import datetime
 
-def get(api_url, header):
+def get(api_url: str, header: dict[str, str]):
     resp = requests.get(api_url, headers=header)
     return resp
 
-def parse_hoyolink(url) -> str:
+def parse_hoyolink(url: str) -> str:
     header = {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
     }
@@ -16,7 +16,7 @@ def parse_hoyolink(url) -> str:
 
     return response.url
 
-def getPostData(url) -> str|None:
+def getPostData(url: str) -> str|None:
     header = {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
     }
@@ -32,10 +32,7 @@ def getPostData(url) -> str|None:
     else:
         return None
 
-def parseResp(api_url, main_url, lang) -> tuple[dict|None, bool]:
-
-    if api_url == None:
-        return main_url, False
+def parseResp(api_url: str, main_url: str, lang: str) -> tuple[dict|None, bool]:
     
     today = datetime.datetime.now()
     header = {
@@ -78,8 +75,9 @@ def parseResp(api_url, main_url, lang) -> tuple[dict|None, bool]:
     else:
         return main_url, False
 
-async def parseShortLink(url, lang):
-    redirected_url = parse_hoyolink(url).split("?")[0]
+async def parseShortLink(url: str, lang: str):
+    redirected_url = parse_hoyolink(url)
+    if "hoyolab.com" in redirected_url: redirected_url = redirected_url.split("?")[0]
     api_url = getPostData(redirected_url)
     if api_url is None:
         print(f'{url} -> {redirected_url}')
@@ -88,10 +86,10 @@ async def parseShortLink(url, lang):
     if data: print(f'{url} -> {redirected_url}')
     return data
 
-async def parseLink(url, lang):
-    redirected_url = url.split("?")[0]
-    api_url = getPostData(redirected_url)
+async def parseLink(url: str, lang: str):
+    url = url.split("?")[0]
+    api_url = getPostData(url)
     if api_url is None: return None, False
-    data = parseResp(api_url, redirected_url, lang)
+    data = parseResp(api_url, url, lang)
     if data: print(f'{url}')
     return data
