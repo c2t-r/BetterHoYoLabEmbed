@@ -3,7 +3,7 @@ a discord bot to improve hoyolab embed
 
 ## function
 original embed (it's too bad. no info about the content is available)  
-![image](https://github.com/c2t-r/BetterHoYoLabEmbed/assets/80561604/123ee8f5-8b9a-439c-974e-61b7533d8e4f)
+![image](https://github.com/c2t-r/BetterHoYoLabEmbed/assets/80561604/59b35f4e-c48b-4a53-82d1-8996d98dd939)
 
 with this bot (AMAZING!!!! you can know everything!!!)  
 ![image](https://github.com/c2t-r/BetterHoYoLabEmbed/assets/80561604/b42e8be5-ff54-4676-944d-dcb7ce5bd6df)
