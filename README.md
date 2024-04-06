@@ -1,11 +1,8 @@
 # BetterHoYoLabEmbed
 a discord bot to improve hoyolab embed
 
-## invite
-https://discord.com/api/oauth2/authorize?client_id=1123581479092498512&permissions=687195085888&scope=bot
-
-## feature
-original embed sucks  
+## function
+original embed is too bad  
 ![image](https://github.com/c2t-r/BetterHoYoLabEmbed/assets/80561604/123ee8f5-8b9a-439c-974e-61b7533d8e4f)
 
 with this bot (AMAZING)  

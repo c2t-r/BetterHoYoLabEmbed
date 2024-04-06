@@ -11,11 +11,12 @@ client = discord.Client(intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
-    print('logged in')
-    print(f'working with {client.user.id}')
+    print('\nlogged in successfully!')
+    print(f'current language setting: {lang}')
+    print(f'working with {client.user.name} ({client.user.id})\n')
 
 @client.event
-async def on_message(message):
+async def on_message(message: discord.Message):
     if message.author.id == client.user.id:
         return
     
@@ -26,6 +27,7 @@ async def on_message(message):
             data = []
             for url in urls:
                 data, isEmbed = await HoYoParse.parseShortLink(url, lang)
+                if not data: return
                 if isEmbed:
                     embed = discord.Embed.from_dict(data)
                     await message.reply(embed=embed, mention_author=False)
@@ -39,6 +41,7 @@ async def on_message(message):
             data = []
             for url in urls:
                 data, isEmbed = await HoYoParse.parseLink(url, lang)
+                if not data: return
                 if isEmbed:
                     embed = discord.Embed.from_dict(data)
                     await message.reply(embed=embed, mention_author=False)
@@ -52,6 +55,7 @@ async def on_message(message):
             data = []
             for url in urls:
                 data, isEmbed = await HoYoParse.parseLink(url, lang)
+                if not data: return
                 if isEmbed:
                     embed = discord.Embed.from_dict(data)
                     await message.channel.send(embed=embed)
